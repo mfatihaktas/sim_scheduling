@@ -2,6 +2,10 @@ server_sf=server.cpp
 server_tf=server
 client_sf=client.cpp
 client_tf=client
+talker_sf=talker.cpp
+talker_tf=talker
+listener_sf=listener.cpp
+listener_tf=listener
 producer_sf=producer.c
 producer_tf=producer
 gateway_sf=gateway.c
@@ -11,9 +15,12 @@ dsanode_tf=dsanode
 
 server: $(server_sf)	
 		g++ -Wno-write-strings -o $(server_tf) $<
-
 client: $(client_sf)
 		g++ -Wno-write-strings -o $(client_tf) $<
+talker: $(talker_sf)
+		g++ -Wno-write-strings -o $(talker_tf) $<		
+listener: $(listener_sf)
+		g++ -Wno-write-strings -o $(listener_tf) $<		
 producer: $(producer_sf)
 		gcc -o $(producer_tf) $<
 gateway: $(gateway_sf)
@@ -22,4 +29,4 @@ dsanode: $(dsanode_sf)
 		gcc -o $(dsanode_tf) $<
 		
 clean:
-		rm -rf $(server_tf) $(client_tf) $(producer_tf) $(gateway_tf)
+		rm -rf $(server_tf) $(client_tf) $(producer_tf) $(gateway_tf) $(talker_tf) 

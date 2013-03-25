@@ -16,6 +16,14 @@ elif [ $1  = 'c' ]
 then
 	make client
 	./client 127.0.0.1 4000 123 file_client.txt #for now
+elif [ $1  = 't' ]
+then
+	make talker
+	./talker 127.0.0.1 4001 #for now
+elif [ $1  = 'l' ]
+then
+	make listener
+	./listener 4001 #for now	
 elif [ $1  = 'd' ]
 then
 	make dsanode

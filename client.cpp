@@ -48,7 +48,7 @@ char* fname;
 int main(int argc, char *argv[])
 {
 	if (argc != 5) {
-        fprintf(stderr,"usage: client hostname, # of chunks to be received, file name\n");
+        fprintf(stderr,"usage: server_address, server_port, nofChunksToRx, fileName\n");
         exit(1);
     }
    	server_address = new char[strlen(argv[1])];
